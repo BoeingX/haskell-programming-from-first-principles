@@ -1,6 +1,7 @@
 # Haskell Programming from First Principles
-
+[![Build Status](https://travis-ci.org/BoeingX/haskell-programming-from-first-principles.svg?branch=master)](https://travis-ci.org/BoeingX/haskell-programming-from-first-principles)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
 
 **Disclaimer: this is an on-going project and is subject to frequent changes.**
 
