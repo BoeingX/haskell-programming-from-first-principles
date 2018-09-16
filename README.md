@@ -1,5 +1,7 @@
 # Haskell Programming from First Principles
 
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
 **Disclaimer: this is an on-going project and is subject to frequent changes.**
 
 This repository hosts my notes and solutions to exercises in the book
