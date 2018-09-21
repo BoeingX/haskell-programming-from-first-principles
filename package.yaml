@@ -25,6 +25,8 @@ dependencies:
 - QuickCheck
 - checkers
 - hspec-checkers
+- random
+- split
 
 library:
   source-dirs: src
