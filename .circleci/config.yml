@@ -1,0 +1,51 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: fpco/stack-build:lts-12.9
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - stack-dependencies-{{ arch }}-{{ checksum "stack.yaml" }}-{{ checksum "package.yaml" }}
+            - stack-dependencies-{{ arch }}-{{ checksum "stack.yaml" }}
+
+      - run:
+          command: stack build --test --bench --only-dependencies -j1
+
+      - save_cache:
+          key: stack-dependencies-{{ arch }}-{{ checksum "stack.yaml" }}-{{ checksum "package.yaml" }}
+          paths:
+            - ~/.stack
+
+      - run:
+          command: stack build --test --no-run-tests --bench --no-run-benchmarks
+
+      - save_cache:
+          key: stack-work-{{ arch }}-{{ .Revision }}
+          paths:
+            - .stack-work
+
+  test:
+    docker:
+      - image: fpco/stack-build:lts-12.9
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - stack-dependencies-{{ arch }}-{{ checksum "stack.yaml" }}-{{ checksum "package.yaml" }}
+            - stack-dependencies-{{ arch }}-{{ checksum "stack.yaml" }}
+      - restore_cache:
+          key: stack-work-{{ arch }}-{{ .Revision }}
+      - run:
+          command: stack test
+workflows:
+  version: 2
+  build-test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
