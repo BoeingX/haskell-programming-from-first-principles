@@ -22,11 +22,17 @@ description:         Please see the README on GitHub at <https://github.com/Boei
 dependencies:
 - base >= 4.7 && < 5
 - transformers
+- containers
+- bytestring
+- text
+- raw-strings-qq
+- random
+- trifecta
+- parsers
 - hspec
 - QuickCheck
 - checkers
 - hspec-checkers
-- random
 - split
 
 library:
