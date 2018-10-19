@@ -1,0 +1,16 @@
+image: haskell:8.4.3
+cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+        - .stack-work/
+        - .stack-root/
+before_script:
+    - stack install --only-dependencies
+stages:
+    - test
+test:
+    stage: test
+    only:
+        - master
+    script:
+        - stack test
