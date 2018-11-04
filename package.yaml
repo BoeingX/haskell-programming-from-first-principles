@@ -40,6 +40,21 @@ dependencies:
 library:
   source-dirs: src
 
+benchmarks:
+  haskell-programming-from-first-principles-benchmark:
+    dependencies:
+      - base
+      - criterion
+    ghc-options:
+      - -O2
+      - -rtsopts
+      - -threaded
+      - -with-rtsopts=-N
+    main: Main.hs
+    source-dirs: 
+      - src
+      - benchmark
+
 tests:
   haskell-programming-from-first-principles-test:
     main:                Spec.hs
