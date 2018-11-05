@@ -27,7 +27,7 @@ This repository is organized as a single Stack project as follows
 ├── stack.yaml
 └── test/
 ```
-where `[src](./src)` are solutions whose name follows the pattern
+where [src](./src) are solutions whose name follows the pattern
 ```
 ChapterName/SectionName/ExerciseName.hs
 ```
