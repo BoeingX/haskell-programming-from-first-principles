@@ -36,6 +36,7 @@ dependencies:
 - split
 - scotty
 - wai
+- time
 
 library:
   source-dirs: src
