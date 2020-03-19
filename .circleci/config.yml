@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: fpco/stack-build:lts-12.9
+      - image: fpco/stack-build:lts-14.27
     steps:
       - checkout
 
@@ -30,7 +30,7 @@ jobs:
 
   test:
     docker:
-      - image: fpco/stack-build:lts-12.9
+      - image: fpco/stack-build:lts-14.27
     steps:
       - checkout
       - restore_cache:
