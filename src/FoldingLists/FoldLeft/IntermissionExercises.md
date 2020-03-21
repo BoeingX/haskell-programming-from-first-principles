@@ -30,6 +30,7 @@ which means they are generally used to
 
 ## Question 5
 
+``` Haskell
 a) foldr (++) "" ["woot", "WOOT", "woot"]
 b) foldr max 'a' "fear is the little death"
 c) foldr (&&) True [False, True]
@@ -39,3 +40,4 @@ f) foldl const 'a' [1..5]
 g) foldl const 0 "tacos"
 h) foldr (flip const) 0 "burritos"
 i) foldr (flip const) 'z' [1..5]
+```
