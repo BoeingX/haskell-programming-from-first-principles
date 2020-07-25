@@ -1,14 +1,14 @@
 module AlgebraicDataTypes.ChapterExercises.AsPatterns where
-    
+
 import Data.Char
+import Data.List (elemIndex)
 
 isSubsequenceOf :: (Eq a) => [a] -> [a] -> Bool
 isSubsequenceOf [] _ = True
 isSubsequenceOf _ [] = False
-isSubsequenceOf (x:xs) ys
-  | null ys'' = False
-  | otherwise = isSubsequenceOf xs (ys' ++ tail ys'')
-    where (ys', ys'') = span (/= x) ys
+isSubsequenceOf xs@(x:xs') (y:ys')
+    | x == y = isSubsequenceOf xs' ys'
+    | otherwise = isSubsequenceOf xs ys'
 
 capitalizeWords :: String -> [(String, String)]
 capitalizeWords = map f . words

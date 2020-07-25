@@ -14,8 +14,10 @@ spec = do
             isSubsequenceOf "blah" "wboloath" `shouldBe` True
         it "isSubsequenceOf \"blah\" \"wootbla\"" $ do
             isSubsequenceOf "blah" "wootbla" `shouldBe` False
+        it "isSubsequenceOf \"blah\" \"halbwoot\"" $ do
+            isSubsequenceOf "blah" "halbwoot" `shouldBe` False
         it "isSubsequenceOf \"abc\" \"cba\"" $ do
-            isSubsequenceOf "abc" "cba" `shouldBe` True
+            isSubsequenceOf "abc" "cba" `shouldBe` False
     describe "Test capitalizeWords" $ do
         it "capitalizeWords \"hello world\"" $ do
             capitalizeWords "hello world" `shouldBe` [("hello", "Hello"), ("world", "World")]
